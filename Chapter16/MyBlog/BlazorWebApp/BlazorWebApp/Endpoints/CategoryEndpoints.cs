@@ -1,5 +1,4 @@
 ﻿namespace BlazorWebApp.Endpoints;
-
 using BlazorWebApp.Client.Interfaces;
 using BlazorWebApp.Client.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -13,6 +12,7 @@ public static class CategoryEndpoints
         {
             return Results.Ok(await repository.GetCategoriesAsync());
         });
+
         app.MapGet("/api/Categories/{*id}",
         async (IBlogRepository repository, string id) =>
         {
